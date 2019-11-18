@@ -7,7 +7,6 @@ open System
 let count(xs:List<int>, x) =
     List.sum(List.filter(fun y -> y=x) xs)
 
-
 let insert(xs:List<int>, x) =
     let indexToInsertOn = List.findIndex(fun y -> y>x) xs
     let firstList, secondList = List.splitAt indexToInsertOn xs
