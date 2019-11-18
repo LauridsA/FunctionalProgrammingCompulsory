@@ -6,9 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Insert.fs" />
-    <Compile Include="intersect.fs" />
-    <Compile Include="Count.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
