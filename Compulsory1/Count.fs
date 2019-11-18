@@ -1,10 +1,6 @@
 ﻿module Count
 
-let count myList:list<int> -> toBeSearched:int -> result:int =
-    //what?
-    0
-
-
-let intersect list list1 : list<int> =
-    //fucking what
-    [0;]
+let count myList:list<int> * toBeSearched:int -> int =
+    
+    let res = List.countBy (fun i -> if (i == toBeSearched) then 1 else 0) myList
+    res
