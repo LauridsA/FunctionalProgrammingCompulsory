@@ -32,13 +32,16 @@ let intersectReal(xs:List<int>, xs2:List<int>) =
 let plus(xs:List<int>, xs2:List<int>) =
     List.sort(List.concat([xs; xs2]))
 
-//let insertAt index = function
-//| xs when index >= 0 && index < List.length xs -> 
-//      xs
-//      |> List.splitAt index
-//      |> fun (x,y) -> y |> List.skip 1 |>  List.append x
-//      |> Some
-//| ys -> None
+let minus(xs:List<int>, xs2:List<int>) =
+    List.except(xs2) xs
+
+let removeAt index = function
+| xs when index >= 0 && index < List.length xs -> 
+      xs
+      |> List.splitAt index
+      |> fun (x,y) -> y |> List.skip 1 |>  List.append x
+      |> Some
+| ys -> None
 
 let weaklyAscendingList = [1; 1; 1; 3; 4; 6; 11; 11; 13; 17; 20]
 let weaklyAscendingList2 = [1; 1; 11; 13; 20]
@@ -60,5 +63,9 @@ printfn "Opg 3 Intersect the fucking list %A" opg3
 
 let opg4 = plus(smallweak, smallweak2)
 printfn "Opg 4 plus into one list %A" opg4
+
+let opg5 = minus(smallweak, smallweak2)
+printfn "Opg 5 minus into one list %A" opg5
+
 
 Console.ReadKey |> ignore
