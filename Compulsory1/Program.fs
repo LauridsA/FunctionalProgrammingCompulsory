@@ -42,8 +42,8 @@ let rec minusv2 conditionIsTrue integersToRemoveFromList =
     | _ -> []
 
 //Helper to call and increase index in ys for conditional removal (so we will only remove as many times as it's in ys)
-let rec removeFirstHelper(xs:List<int>, ys:List<int>, index) = 
-        let removed = removeFirstHelper(minusv2 (fun x -> x=ys.[index]) xs, ys, index+1)
+let rec minusV2Helper(xs:List<int>, ys:List<int>, index) = 
+        let removed = minusV2Helper(minusv2 (fun x -> x=ys.[index]) xs, ys, index+1)
         removed
 // Løber out of bounds, vil ikke stoppes.
 
