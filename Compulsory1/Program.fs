@@ -17,11 +17,6 @@ let insertSort(xs:List<int>, x) =
     let appendedList = x::xs
     List.sort appendedList
 
-let intersect(xs:List<int>, xs2:List<int>) =
-    let set1 = Set.ofList xs
-    let set2 = Set.ofList xs2
-    let intersectedSet = Set.intersect set1 set2
-    Set.toList intersectedSet
 
 let intersectReal(xs:List<int>, xs2:List<int>) =
     let set1 = Set.ofList xs
@@ -43,11 +38,18 @@ let removeAt index = function
       |> Some
 | ys -> None
 
-let weaklyAscendingList = [1; 1; 1; 3; 4; 6; 11; 11; 13; 17; 20]
-let weaklyAscendingList2 = [1; 1; 11; 13; 20]
+let Intersect (xslist:List<int>, yslist:List<int>) =
+    let result = List.choose(fun elem ->
+        match (List.tryFind (fun k -> elem=k) xslist) with
+        | Some(k) -> Some(k) 
+        | None -> None ) yslist
+    result
 
-let smallweak = [1; 1; 3; 4;]
-let smallweak2 = [1; 2; 6;]
+let weaklyAscendingList = [1; 1; 1; 3; 4; 6; 11; 11; 13; 17; 20]
+let weaklyAscendingList2 = [1; 1; 2; 11; 13; 20]
+
+let smallweak = [1; 1; 1; 2; 2;]
+let smallweak2 = [1; 1; 2; 4;]
 
 let opg1 = count(weaklyAscendingList, 1)
 printfn "Opg 1 count of 1's in the:  %i" opg1
@@ -58,8 +60,9 @@ printfn "Opg 2 list after inserting index 2 List is: %A" opg2
 let opg2sort = insertSort(weaklyAscendingList, 2)
 printfn "Opg 2 sort list after inserting and sorting the List is: %A" opg2sort
 
-let opg3 = intersect(weaklyAscendingList, weaklyAscendingList2)
-printfn "Opg 3 Intersect the fucking list %A" opg3
+let opg3 = Intersect (weaklyAscendingList, weaklyAscendingList2)
+printfn "Opg 3 intersect lists %A" opg3
+
 
 let opg4 = plus(smallweak, smallweak2)
 printfn "Opg 4 plus into one list %A" opg4
