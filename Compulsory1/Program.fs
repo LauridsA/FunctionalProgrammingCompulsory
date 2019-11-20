@@ -50,7 +50,7 @@ let rec minusV2Helper(xs:List<int>, ys:List<int>, index) =
 let weaklyAscendingList = [1; 1; 1; 3; 4; 6; 11; 11; 13; 17; 20]
 let weaklyAscendingList2 = [1; 1; 2; 11; 13; 20]
 
-let smallweak = [1; 1; 1; 2; 2;]
+let smallweak = [1; 1; 1; 2; 2; 5;]
 let smallweak2 = [1; 1; 2; 4;]
 
 // Runs
