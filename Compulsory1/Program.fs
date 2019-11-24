@@ -47,6 +47,13 @@ let rec minusV2Helper(xs:List<int>, ys:List<int>, index) =
         removed
 // Løber out of bounds, vil ikke stoppes.
 
+//let rec Minusv3(l1, l2) =
+//    match (l1, l2) with
+//    (s1,[]) -> s1  // s - [] = s
+//    | ([], s) -> []  // [] - s = []
+//    | (h1::t1, h2::t2) when h1 = h2 -> Minusv3 (t1,t2) 
+//    | ([], []) -> []    
+
 let weaklyAscendingList = [1; 1; 1; 3; 4; 6; 11; 11; 13; 17; 20]
 let weaklyAscendingList2 = [1; 1; 2; 11; 13; 20]
 
@@ -70,7 +77,7 @@ printfn "Opg 3 intersect lists %A" opg3
 let opg4 = plus(smallweak, smallweak2)
 printfn "Opg 4 plus into one list %A" opg4
 
-let opg5 = minus(smallweak, smallweak2)
-printfn "Opg 5 minus into one list %A" opg5
+//let opg5 = Minusv3(smallweak, smallweak2)
+//printfn "Opg 5 minus into one list %A" Minusv3
 
 Console.ReadKey |> ignore
